@@ -1,12 +1,27 @@
-import { StyleSheet, Platform, SafeAreaView, Button, StatusBar } from 'react-native';
+import {
+    Dimensions,
+    StyleSheet,
+    Platform,
+    SafeAreaView,
+    View,
+    StatusBar 
+} from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 export default function App() {
+    const {landscape} = useDeviceOrientation()
+
     return (
         <SafeAreaView style={styles.container}>
-            <Button
-                title="Click Me"
-                onPress={() => console.log("button pressed")}
-            />
+            <View
+                style={{
+                    backgroundColor: "dodgerblue",
+                    width: "100%",
+                    height: landscape ? "100%" : "30%"
+                }}
+            >
+
+            </View>
         </SafeAreaView>
     );
 }
