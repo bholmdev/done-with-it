@@ -1,62 +1,60 @@
-import { StyleSheet, View, Text, ImageBackground, Image } from "react-native";
+import { StyleSheet, ImageBackground, View, Image, Text } from "react-native";
+import BACKGROUNDIMAGE from "../assets/images/background.jpg";
+import LOGO from "../assets/images/logo-red.png";
+import colors from "../config/colors";
 
-const backgroundImage = require("../assets/images/background.jpg");
-const logoImage = require("../assets/images/logo-red.png");
-
-const WelcomeScreen = () => {
+const WelcomeScreen = (props) => {
     return (
-        <View style={welcomeStyles.container}>
-            <ImageBackground
-                style={welcomeStyles.background}
-                source={backgroundImage}
-            >
+        <ImageBackground
+            style={styles.background}
+            source={BACKGROUNDIMAGE}
+        >
+            <View style={styles.logoContainer}>
                 <Image
-                    source={logoImage}
-                    style={welcomeStyles.logo}
+                    style={styles.logo}
+                    source={LOGO}
                 />
-                <Text
-                    style={welcomeStyles.slogan}
-                >
-                    Sell What You Don't Need
-                </Text>
-            </ImageBackground>
-            <View style={welcomeStyles.loginButton}></View>
-            <View style={welcomeStyles.registerButton}></View>
-        </View>
+                <Text>Sell What You Don't Need</Text>
+                </View>
+            <View
+                style={styles.loginButton}
+            >
+
+            </View>
+            <View
+                style={styles.registerButton}
+            >
+
+            </View>
+        </ImageBackground>
     );
 };
 
-const welcomeStyles = StyleSheet.create({
-    container: {
-        flex: 1,
-        height: "100%",
-        width: "100%"
-    },
+const styles = StyleSheet.create({
     background: {
         flex: 1,
-        height: "100%",
-        width: "100%"
-    },
-    logo: {
-        alignSelf: "center",
-        top: 150,
-        height: 75,
-        width: 75,
-    },
-    slogan: {
-        alignSelf: "center",
-        top: 155
+        justifyContent: "flex-end",
+        alignItems: "center"
     },
     loginButton: {
-        backgroundColor: "#fc5c65",
-        height: "10%",
-        width: "100%"
+        width: "100%",
+        height: 70,
+        backgroundColor: colors.primary
+    },
+    logoContainer: {
+        alignItems: "center",
+        position: "absolute",
+        top: 70
+    },
+    logo: {
+        width: 100,
+        height: 100
     },
     registerButton: {
-        backgroundColor: "#4ecdc4",
-        height: "10%",
-        width: "100%"
-    }
+        width: "100%",
+        height: 70,
+        backgroundColor: colors.secondary
+    },
 });
 
 export default WelcomeScreen;
