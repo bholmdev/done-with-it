@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     text: {
         color: "tomato",
         fontSize: 18,
-        fontFamily: "Robot"
+        fontFamily: "Roboto"
     }
 });
 
