@@ -1,5 +1,5 @@
-import { Text, View } from 'react-native';
-import AppText from './app/components/AppText/AppText';
+import { Text, TouchableOpacity, View } from 'react-native';
+import AppButton from './components/AppButton';
 
 export default function App() {
     return (
@@ -10,7 +10,7 @@ export default function App() {
                 alignItems: "center"
             }}
         >
-            <AppText>I love React Native!</AppText>
+            <AppButton title="Login" />
         </View>
     );
 };
