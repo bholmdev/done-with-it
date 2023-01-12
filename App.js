@@ -1,8 +1,5 @@
 import { Text, View } from 'react-native';
-import ViewImageScreen from './screens/ViewImageScreen';
-import WelcomeScreen from './screens/WelcomeScreen';
-import AppText from './app/components/AppText';
-import { MaterialCommunityIcons } from "@expo/vector-icons"
+import AppText from './app/components/AppText/AppText';
 
 export default function App() {
     return (
