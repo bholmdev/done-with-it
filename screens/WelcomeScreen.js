@@ -1,6 +1,6 @@
 import { StyleSheet, ImageBackground, View, Image, Text } from "react-native";
-import BACKGROUNDIMAGE from "../assets/images/background.jpg";
-import LOGO from "../assets/images/logo-red.png";
+import BACKGROUNDIMAGE from "../app/assets/images/background.jpg";
+import LOGO from "../app/assets/images/logo-red.png";
 import colors from "../config/colors";
 
 const WelcomeScreen = (props) => {

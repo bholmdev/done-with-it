@@ -1,5 +1,5 @@
 import { StyleSheet, Image, View } from "react-native";
-import CHAIR from "../assets/images/chair.jpg";
+import CHAIR from "../app/assets/images/chair.jpg";
 import colors from "../config/colors";
 
 const ViewImageScreen = (props) => {
