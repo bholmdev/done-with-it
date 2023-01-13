@@ -1,5 +1,6 @@
 import { StyleSheet, FlatList } from "react-native";
 import ListItem from "../components/ListItem"
+import ListItemSeparator from "../components/ListItemSeparator";
 import Screen from "../components/Screen";
 
 const messages = [
@@ -23,12 +24,14 @@ const MessagesScreen = (props) => {
         <FlatList
             data={messages}
             keyExtractor={message => message.id.toString()}
-            renderItem={({ item }) =>
+            renderItem={({ item }) => (
                 <ListItem
                     title={item.title}
                     subTitle={item.description}
                     image={item.image}
-                />}
+                />
+            )}
+            ItemSeparatorComponent={ListItemSeparator}
         />
     </Screen>
   )
