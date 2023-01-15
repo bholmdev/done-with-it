@@ -4,7 +4,7 @@ import AppText from "./AppText/AppText.js";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-const ListItem = ({ title, subTitle, image, onPress, renderRightActions }) => {
+const ListItem = ({ title, subTitle, image, ImageComponent, onPress, renderRightActions }) => {
     return (
         <GestureHandlerRootView>
             <Swipeable
@@ -15,13 +15,14 @@ const ListItem = ({ title, subTitle, image, onPress, renderRightActions }) => {
                     onPress={onPress}
                 >
                     <View style={styles.container}>
-                        <Image
+                        {ImageComponent}
+                        {image && <Image
                             style={styles.image}
                             source={image}
-                        />
-                        <View>
+                        />}
+                        <View style={styles.detailContainer}>
                             <AppText style={styles.title}>{title}</AppText>
-                            <AppText style={styles.subTitle}>{subTitle}</AppText>
+                            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
                         </View>
                     </View>
                 </TouchableHighlight>
@@ -35,6 +36,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         padding: 15
     },
+    detailContainer: {
+        marginLeft: 10,
+        justifyContent: "center"
+    },  
     image: {
         width: 70,
         height: 70,
