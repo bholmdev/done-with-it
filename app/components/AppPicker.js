@@ -1,11 +1,12 @@
-import { StyleSheet, View, Button, TouchableWithoutFeedback, Modal } from "react-native";
+import { StyleSheet, View, Button, TouchableWithoutFeedback, Modal, FlatList } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 import AppText from "./AppText";
 import React, { useState } from "react";
 import Screen from "./Screen";
+import PickerItem from "./PickerItem";
 
-const AppPicker = ({ icon, placeholder, ...otherProps }) => {
+const AppPicker = ({ icon, items, placeholder }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -36,6 +37,16 @@ const AppPicker = ({ icon, placeholder, ...otherProps }) => {
                     <Button
                         title="Close"
                         onPress={() => setModalVisible(false)}
+                    />
+                    <FlatList
+                        data={items}
+                        keyExtractor={item => item.value.toString()}
+                        renderItem={({ item }) => 
+                            <PickerItem 
+                                label={item.label}
+                                onPress={() => console.log(item)}
+                            />
+                        }
                     />
                 </Screen>
             </Modal>
