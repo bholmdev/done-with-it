@@ -2,6 +2,9 @@ import "react-native-gesture-handler";
 import Screen from ".//app/components/Screen";
 import { Text, TextInput } from "react-native";
 import { useState } from "react";
+import AppTextInput from "./app/components/AppTextInput";
+import colors from "./app/config/colors";
+import styles from "./app/components/AppText/styles";
 
 
 export default function App() {
@@ -9,18 +12,7 @@ export default function App() {
 
     return (
         <Screen>
-            <Text>{firstName}</Text>
-            <TextInput
-                secureTextEntry
-                clearButtonMode="always"
-                keyboardType="numeric"
-                onChangeText={text => setFirstName(text)}
-                placeholder="First Name"
-                style={{
-                    borderBottomColor: "#ccc",
-                    borderBottomWidth: 1
-                }}
-            />
+            <AppTextInput placeholder="Username" icon="email" />
         </Screen>
     );
 };
