@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import AppFormField from "../components/AppFormField";
 import SubmitButton from "../components/SubmitButton";
+import AppForm from "../components/AppForm";
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label("Email"),
@@ -18,14 +19,12 @@ const LoginScreen = (props) => {
                 style={styles.logo}
                 source={require("../assets/images/logo-red.png")}
             />
-            <Formik
+            <AppForm
                 initialValues={{ email: "", password: "" }}
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}
             >
-                {() => (
-                    <>
-                        <AppFormField
+                <AppFormField
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="email"
@@ -44,9 +43,7 @@ const LoginScreen = (props) => {
                             textContentType="password"
                         />
                         <SubmitButton title="Login" />
-                    </>
-                )}
-            </Formik>
+            </AppForm>
         </Screen>
     )
 };
