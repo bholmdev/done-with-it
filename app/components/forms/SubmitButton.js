@@ -1,4 +1,4 @@
-import AppButton from "./AppButton";
+import AppButton from "../AppButton";
 import { useFormikContext } from "formik";
 
 const SubmitButton = ({ title }) => {
