@@ -11,7 +11,7 @@ const ListItem = ({
         image,
         IconComponent,
         onPress,
-        renderRightActions    
+        renderRightActions
 }) => {
     return (
         <GestureHandlerRootView>
@@ -29,8 +29,20 @@ const ListItem = ({
                             source={image}
                         />}
                         <View style={styles.detailContainer}>
-                            <AppText style={styles.title}>{title}</AppText>
-                            {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
+                            <AppText 
+                                style={styles.title}
+                                numberOfLines={1}
+                            >
+                                {title}
+                            </AppText>
+                            {subTitle && (
+                                <AppText
+                                    numberOfLines={2}
+                                    style={styles.subTitle}
+                                >
+                                    {subTitle}
+                                </AppText>
+                            )}
                         </View>
                         <MaterialCommunityIcons
                             color={colors.medium}
