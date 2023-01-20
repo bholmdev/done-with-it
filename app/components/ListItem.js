@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
-import colors from "../config/colors.js";
+import colors from "../config/colors";
 import AppText from "./AppText";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Swipeable from 'react-native-gesture-handler/Swipeable';
