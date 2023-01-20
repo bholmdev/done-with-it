@@ -6,7 +6,12 @@ import React, { useState } from "react";
 import Screen from "./Screen";
 import PickerItem from "./PickerItem";
 
-const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => {
+const AppPicker = ({
+        icon,
+        items,
+        onSelectItem,
+        placeholder,
+        selectedItem}) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
@@ -46,7 +51,7 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem }) => 
                         data={items}
                         keyExtractor={item => item.value.toString()}
                         renderItem={({ item }) => 
-                            <PickerItem 
+                            <PickerItem
                                 label={item.label}
                                 onPress={() => {
                                     setModalVisible(false);

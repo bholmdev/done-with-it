@@ -1,5 +1,5 @@
 import { StyleSheet, Image, View } from 'react-native';
-import AppText from "../components/AppText/AppText.js";
+import AppText from '../components/AppText';
 import colors from "../config/colors";
 import ListItem from '../components/ListItem.js';
 
