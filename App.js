@@ -1,9 +1,8 @@
 import "react-native-gesture-handler";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default function App() {
     return (
-       <ListingDetailsScreen /> 
+       <ListingEditScreen /> 
     );
 };
