@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 30,
         paddingVertical: 15,
-        alignContent: "center",
-        width: "33%"
+        alignItems: "center",
+        width: "33%",
     },
     label: {
         marginTop: 5,
         textAlign: "center",
-        fontSize: 15
+        fontSize: 11
     }
 });
 
